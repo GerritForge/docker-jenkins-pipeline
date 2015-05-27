@@ -1,1 +1,1 @@
-# docker-jenkins-pipeline
+# Jenkins CI Docker Image
