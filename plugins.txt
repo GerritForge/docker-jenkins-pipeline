@@ -2,3 +2,6 @@ git:latest
 git-client:latest
 scm-api:latest
 credentials:latest
+durable-task:latest
+docker-plugin:latest
+ansicolor:latest
