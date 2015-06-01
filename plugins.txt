@@ -1,5 +1,7 @@
 git:latest
 git-client:latest
+github-api:latest
+github-oauth:latest
 scm-api:latest
 credentials:latest
 durable-task:latest
