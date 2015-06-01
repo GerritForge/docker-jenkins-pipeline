@@ -11,7 +11,9 @@ RUN apt-get update && apt-get install -y \
     autoconf \
     automake \
     maven \
-    && rm -rf /var/lib/apt/lists/*
+    vim
+
+RUN rm -rf /var/lib/apt/lists/*
 
 COPY plugins.sh /usr/local/bin/
 
