@@ -12,6 +12,7 @@
       </organizationNameList>
       <adminUserNameList class="linked-list">
         <string>lucamilanesio</string>
+        <string>tiago-palma</string>
       </adminUserNameList>
       <authenticatedUserReadPermission>false</authenticatedUserReadPermission>
       <useRepositoryPermissions>false</useRepositoryPermissions>
