@@ -13,7 +13,11 @@ RUN apt-get update && apt-get install -y \
     maven \
     && rm -rf /var/lib/apt/lists/*
 
+COPY plugins.sh /usr/local/bin/
+
 USER jenkins
+
+ENV JENKINS_UC http://mirrors.clinkerhq.com/jenkins
 
 COPY plugins.txt /usr/share/jenkins/ref/
 RUN plugins.sh /usr/share/jenkins/ref/plugins.txt
