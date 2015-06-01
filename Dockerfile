@@ -25,4 +25,6 @@ COPY plugins.txt /usr/share/jenkins/ref/
 RUN plugins.sh /usr/share/jenkins/ref/plugins.txt
 COPY number-executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
+COPY *xml /var/jenkins_home/
+
 COPY gitconfig /usr/share/jenkins/ref/.gitconfig
