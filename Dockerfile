@@ -17,7 +17,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 COPY plugins.sh /usr/local/bin/
 
-USER jenkins
+USER root
 
 ENV JENKINS_UC http://mirrors.clinkerhq.com/jenkins
 
@@ -26,10 +26,13 @@ RUN plugins.sh /usr/share/jenkins/ref/plugins.txt
 COPY number-executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 COPY *xml /var/jenkins_home/
-COPY .ssh/* /var/jenkins_home/.ssh
 
-RUN chmod -R 700 /var/jenkins_home/.ssh
-RUN chmod 600 /var/jenkins_home/.ssh/*
-RUN ssh-keyscan github.com > /var/jenkins_home/.ssh/known_hosts
+COPY .ssh/* /root/.ssh/
+RUN chmod 600 /root/.ssh/id_rsa
+RUN ssh -T -o StrictHostKeyChecking=no -o PasswordAuthentication=no git@github.com | true
+
+RUN git config --global user.email "info@gerritforge.com"
+RUN git config --global user.name "GerritForge Build"
 
 COPY gitconfig /usr/share/jenkins/ref/.gitconfig
+

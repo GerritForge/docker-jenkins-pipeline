@@ -5,13 +5,13 @@
       <name>gerrithub.io</name>
       <noConnectionOnStartup>false</noConnectionOnStartup>
       <config class="com.sonyericsson.hudson.plugins.gerrit.trigger.config.Config">
-        <gerritHostName>review.gerrithub.io</gerritHostName>
+        <gerritHostName>mesos1.gerritforge.com</gerritHostName>
         <gerritSshPort>29418</gerritSshPort>
         <gerritProxy></gerritProxy>
-        <gerritUserName>lucamilanesio</gerritUserName>
-        <gerritEMail>luca.milanesio@gmail.com</gerritEMail>
-        <gerritAuthKeyFile>/var/jenkins_home/.ssh/id_rsa</gerritAuthKeyFile>
-        <gerritAuthKeyFilePassword>4dqWmK3qXOMfzFfNZhjTHw==</gerritAuthKeyFilePassword>
+        <gerritUserName>gerritforgebuild</gerritUserName>
+        <gerritEMail></gerritEMail>
+        <gerritAuthKeyFile>/root/.ssh/id_rsa</gerritAuthKeyFile>
+        <gerritAuthKeyFilePassword></gerritAuthKeyFilePassword>
         <useRestApi>false</useRestApi>
         <restCodeReview>false</restCodeReview>
         <restVerified>false</restVerified>
