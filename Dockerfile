@@ -36,3 +36,6 @@ RUN git config --global user.email "info@gerritforge.com"
 RUN git config --global user.name "GerritForge Build"
 
 COPY gitconfig /usr/share/jenkins/ref/.gitconfig
+
+RUN curl -OL https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.8/sbt-launch.jar
+RUN mv sbt-launch.jar /usr/share/
