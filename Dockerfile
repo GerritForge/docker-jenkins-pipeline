@@ -30,6 +30,7 @@ COPY *xml /var/jenkins_home/
 COPY .ssh/* /root/.ssh/
 RUN chmod 600 /root/.ssh/id_rsa
 RUN ssh -T -o StrictHostKeyChecking=no -o PasswordAuthentication=no git@github.com | true
+RUN ssh -T -o StrictHostKeyChecking=no -o PasswordAuthentication=no -p 29418 gerritforgebuild@mesos1.gerritforge.com | true
 
 RUN git config --global user.email "info@gerritforge.com"
 RUN git config --global user.name "GerritForge Build"
