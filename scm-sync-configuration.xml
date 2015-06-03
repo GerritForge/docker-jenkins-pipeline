@@ -5,5 +5,8 @@
   <noUserCommitMessage>false</noUserCommitMessage>
   <displayStatus>true</displayStatus>
   <commitMessagePattern>[message]</commitMessagePattern>
-  <manualSynchronizationIncludes/>
+  <manualSynchronizationIncludes>
+    <include>org.jvnet.hudson.plugins.SbtPluginBuilder.xml</include>
+    <include>gerrit-trigger.xml</include>
+  </manualSynchronizationIncludes>
 </hudson.plugins.scm__sync__configuration.ScmSyncConfigurationPlugin>
