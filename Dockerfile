@@ -25,7 +25,7 @@ COPY plugins.txt /usr/share/jenkins/ref/
 RUN plugins.sh /usr/share/jenkins/ref/plugins.txt
 COPY number-executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
-COPY *xml /var/jenkins_home/
+COPY *xml /usr/share/jenkins/ref/
 
 COPY .ssh/* /root/.ssh/
 RUN chmod 600 /root/.ssh/id_rsa
@@ -36,3 +36,7 @@ RUN git config --global user.email "info@gerritforge.com"
 RUN git config --global user.name "GerritForge Build"
 
 COPY gitconfig /usr/share/jenkins/ref/.gitconfig
+
+COPY scm-sync-init.sh /usr/local/bin/
+RUN /bin/bash -x /usr/local/bin/scm-sync-init.sh
+
