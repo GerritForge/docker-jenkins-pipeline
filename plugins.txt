@@ -10,3 +10,4 @@ ansicolor:latest
 scm-sync-configuration:latest
 gerrit-trigger:latest
 sbt:latest
+parameterized-trigger:latest
