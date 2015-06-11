@@ -4,9 +4,9 @@
 
 To run on non-default port 8081 (Marathon uses 8080) go with:
 
-	docker run -d -t -p 8081:8081 --name="jenkins-master" jucc/jenkins-master jenkins.sh --httpPort=8081
+	docker run -d -t -p 8081:8081 -v /etc/localtime:/etc/localtime:ro --name="jenkins-master" jucc/jenkins-master jenkins.sh --httpPort=8081
 
 
 Available at:
 
-  http://mesos3.gerritforge.com:8081/  juc / juc123
+  http://mesos3.gerritforge.com:8081/  (login with your GitHub account)
