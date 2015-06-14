@@ -2,7 +2,9 @@ FROM jenkins
 
 USER root
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y \
     python-pip \
     python-yaml \
     python-jenkins \
@@ -11,8 +13,12 @@ RUN apt-get update && apt-get install -y \
     autoconf \
     automake \
     maven \
-    vim
+    vim \
+    apparmor \
+    wget
 
+RUN wget -qO- https://get.docker.com/ | sh
+RUN systemctl enable docker 
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY plugins.sh /usr/local/bin/
@@ -40,3 +46,6 @@ COPY gitconfig /usr/share/jenkins/ref/.gitconfig
 COPY scm-sync-init.sh /usr/local/bin/
 RUN /bin/bash -x /usr/local/bin/scm-sync-init.sh
 
+ADD run.sh /user/bin/run.sh
+
+CMD "run.sh"
