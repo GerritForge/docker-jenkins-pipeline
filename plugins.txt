@@ -11,3 +11,4 @@ scm-sync-configuration:latest
 gerrit-trigger:latest
 sbt:latest
 parameterized-trigger:latest
+docker-build-step:latest
