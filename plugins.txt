@@ -12,3 +12,4 @@ gerrit-trigger:latest
 sbt:latest
 parameterized-trigger:latest
 docker-build-step:latest
+postbuildscript:latest
