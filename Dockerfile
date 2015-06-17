@@ -42,7 +42,8 @@ RUN git config --global user.email "info@gerritforge.com"
 RUN git config --global user.name "GerritForge Build"
 
 COPY gitconfig /usr/share/jenkins/ref/.gitconfig
-COPY http://stedolan.github.io/jq/download/linux64/jq /usr/bin/jq
+ADD http://stedolan.github.io/jq/download/linux64/jq /usr/bin/jq
+RUN chmod a+x /usr/bin/jq
 
 COPY scm-sync-init.sh /usr/local/bin/
 RUN /bin/bash -x /usr/local/bin/scm-sync-init.sh
